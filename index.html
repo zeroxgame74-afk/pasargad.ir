@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
         
-        /* هدر با عکس کوروش */
+        /* هدر ساده سفید */
         .hero {
             position: relative;
             z-index: 1;
@@ -32,20 +32,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(245,245,245,0.75) 100%),
-                        url('https://uploadkon.ir/uploads/17db07_26Cyrus-.png') center/cover no-repeat;
-            background-attachment: fixed;
+            background: #ffffff;
             border-bottom: 3px solid #1a1a1a;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to top, #ffffff, transparent);
         }
         
         .hero-content {
@@ -64,7 +52,6 @@
             font-weight: 900;
             color: #1a1a1a;
             letter-spacing: 8px;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.05);
         }
         
         .hero-content h1 i {
@@ -186,9 +173,194 @@
             z-index: 1;
         }
         
-        /* صفحه نامه‌نگار */
-        .letter-page {
+        /* صفحه خانه */
+        .home-intro {
             padding: 80px 0 60px;
+        }
+        
+        .home-intro .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .home-intro .section-title i {
+            margin-left: 15px;
+            color: #1a1a1a;
+        }
+        
+        .home-intro .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        /* کارت کوروش در خانه */
+        .featured-card {
+            background: #f8f8f8;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: 0.4s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        
+        .featured-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
+        }
+        
+        .featured-card .card-image {
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        
+        .featured-card .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        
+        .featured-card:hover .card-image img {
+            transform: scale(1.03);
+        }
+        
+        .featured-card .card-content {
+            padding: 50px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-card .card-content .badge-top {
+            display: inline-block;
+            background: rgba(0,0,0,0.05);
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+        
+        .featured-card .card-content .badge-top i {
+            color: #1a1a1a;
+            margin-left: 6px;
+        }
+        
+        .featured-card .card-content h2 {
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .featured-card .card-content h2 i {
+            color: #1a1a1a;
+            margin-left: 12px;
+        }
+        
+        .featured-card .card-content .role {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .featured-card .card-content .role i {
+            color: #1a1a1a;
+            margin-left: 8px;
+        }
+        
+        .featured-card .card-content p {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+        
+        .featured-card .card-content .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .featured-card .card-content .btn-group a {
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .featured-card .card-content .btn-group .btn-primary {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .featured-card .card-content .btn-group .btn-primary:hover {
+            background: #000;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .featured-card .card-content .btn-group .btn-outline {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+        
+        .featured-card .card-content .btn-group .btn-outline:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        
+        .featured-card .card-content .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .featured-card .card-content .tags span {
+            background: rgba(0,0,0,0.03);
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #555;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        
+        .featured-card .card-content .tags span i {
+            color: #1a1a1a;
+            margin-left: 5px;
+        }
+        
+        /* ========== صفحه نامه‌نگار ========== */
+        .letter-page {
+            display: none;
+            padding: 80px 0 60px;
+        }
+        
+        .letter-page.active {
+            display: block;
+            animation: fadeInPage 0.6s ease;
+        }
+        
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .letter-page .page-title {
@@ -211,119 +383,141 @@
             margin-bottom: 50px;
         }
         
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+            font-family: 'Vazir', sans-serif;
+            margin-bottom: 30px;
+        }
+        
+        .back-home-btn:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        /* کارت‌های نامه‌نگار - هرکدوم یه بخش */
         .letter-card {
             background: #f8f8f8;
-            border-radius: 40px;
-            padding: 50px;
-            margin-bottom: 40px;
+            border-radius: 30px;
+            padding: 35px 40px;
+            margin-bottom: 25px;
             border: 1px solid rgba(0,0,0,0.06);
             transition: 0.3s;
         }
         
         .letter-card:hover {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-        }
-        
-        /* عکس بزرگ در بالای کارت */
-        .letter-card .profile-img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 25px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
         }
         
         .letter-card .card-header {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            gap: 18px;
+            cursor: pointer;
+            user-select: none;
         }
         
         .letter-card .card-header .icon-box {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #1a1a1a;
-            border-radius: 20px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #ffffff;
             flex-shrink: 0;
         }
         
-        .letter-card .card-header .icon-box img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
         .letter-card .card-header h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #1a1a1a;
+            flex: 1;
         }
         
-        .letter-card .card-header .badge {
-            margin-right: auto;
-            background: rgba(0,0,0,0.05);
-            padding: 4px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            color: #666;
+        .letter-card .card-header .toggle-icon {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            transition: 0.3s;
+            width: 30px;
+            text-align: center;
         }
         
-        .letter-card p {
+        .letter-card .card-header .toggle-icon.open {
+            transform: rotate(180deg);
+        }
+        
+        /* محتوای کشویی */
+        .letter-card .card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            padding: 0 10px;
+        }
+        
+        .letter-card .card-body.open {
+            max-height: 2000px;
+            padding: 20px 10px 5px;
+        }
+        
+        .letter-card .card-body p {
             color: #444;
             font-size: 1.05rem;
             line-height: 2.2;
             text-align: justify;
         }
         
-        .letter-card .info-grid {
+        .letter-card .card-body .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
         
-        .letter-card .info-grid .info-item {
+        .letter-card .card-body .info-grid .info-item {
             background: #ffffff;
-            padding: 18px 25px;
+            padding: 15px 20px;
             border-radius: 15px;
             border: 1px solid rgba(0,0,0,0.04);
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
         
-        .letter-card .info-grid .info-item i {
+        .letter-card .card-body .info-grid .info-item i {
             color: #1a1a1a;
-            font-size: 1.3rem;
-            width: 35px;
+            font-size: 1.2rem;
+            width: 30px;
         }
         
-        .letter-card .info-grid .info-item .label {
+        .letter-card .card-body .info-grid .info-item .label {
             color: #888;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         
-        .letter-card .info-grid .info-item .value {
+        .letter-card .card-body .info-grid .info-item .value {
             color: #1a1a1a;
             font-weight: 600;
         }
         
-        .letter-card ul {
+        .letter-card .card-body ul {
             list-style: none;
             padding-right: 20px;
         }
         
-        .letter-card ul li {
-            padding: 10px 0;
+        .letter-card .card-body ul li {
+            padding: 8px 0;
             border-bottom: 1px solid rgba(0,0,0,0.04);
             color: #444;
             display: flex;
@@ -331,48 +525,48 @@
             gap: 12px;
         }
         
-        .letter-card ul li i {
+        .letter-card .card-body ul li i {
             color: #1a1a1a;
             width: 25px;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
-        .letter-card .source-list {
+        .letter-card .card-body .highlight-box {
+            background: #ffffff;
+            padding: 20px 25px;
+            border-radius: 16px;
+            border-right: 4px solid #1a1a1a;
+            margin: 15px 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .letter-card .card-body .highlight-box i {
+            color: #1a1a1a;
+            margin-left: 12px;
+        }
+        
+        .letter-card .card-body .source-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 10px;
         }
         
-        .letter-card .source-list span {
+        .letter-card .card-body .source-list span {
             background: #ffffff;
-            padding: 8px 20px;
+            padding: 6px 18px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #555;
             border: 1px solid rgba(0,0,0,0.04);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
-        .letter-card .source-list span i {
+        .letter-card .card-body .source-list span i {
             color: #1a1a1a;
-        }
-        
-        .letter-card .highlight-box {
-            background: #ffffff;
-            padding: 25px 30px;
-            border-radius: 20px;
-            border-right: 5px solid #1a1a1a;
-            margin: 20px 0;
-            font-size: 1.05rem;
-            color: #333;
-        }
-        
-        .letter-card .highlight-box i {
-            color: #1a1a1a;
-            margin-left: 12px;
         }
         
         /* فوتر */
@@ -381,8 +575,6 @@
             padding: 60px 30px 30px;
             margin-top: 80px;
             border-top: 1px solid rgba(0,0,0,0.06);
-            position: relative;
-            z-index: 1;
         }
         
         .footer-content {
@@ -430,7 +622,6 @@
             margin: 0 5px;
         }
         
-        /* دکمه بازگشت */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -456,6 +647,20 @@
         }
         
         /* ریسپانسیو */
+        @media (max-width: 992px) {
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-card .card-image {
+                min-height: 300px;
+            }
+            
+            .featured-card .card-content {
+                padding: 35px 30px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -483,40 +688,39 @@
                 padding: 5px 12px;
             }
             
-            .letter-page .page-title {
+            .featured-card .card-content h2 {
                 font-size: 2rem;
             }
             
-            .letter-card {
-                padding: 25px 20px;
-            }
-            
-            .letter-card .card-header {
+            .featured-card .card-content .btn-group {
                 flex-direction: column;
-                text-align: center;
             }
             
-            .letter-card .card-header .badge {
-                margin-right: 0;
-            }
-            
-            .letter-card .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .letter-card .source-list {
+            .featured-card .card-content .btn-group a {
                 justify-content: center;
             }
             
-            .letter-card .profile-img {
-                max-height: 300px;
+            .letter-card {
+                padding: 20px;
+            }
+            
+            .letter-card .card-header {
+                flex-wrap: wrap;
+            }
+            
+            .letter-card .card-body .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .letter-card .card-body .source-list {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- هدر با عکس کوروش -->
+<!-- هدر ساده سفید -->
 <section class="hero">
     <div class="hero-content">
         <h1><i class="fas fa-landmark"></i> پاسارگاد <i class="fas fa-landmark"></i></h1>
@@ -527,251 +731,290 @@
     </div>
 </section>
 
-<!-- ناوبری -->
+<!-- نوار ناوبری -->
 <nav class="navbar" id="navbar">
     <div class="logo">
         <i class="fas fa-gem"></i> پاسارگاد
     </div>
     <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i> خانه</a></li>
-        <li><a href="#letter"><i class="fas fa-scroll"></i> نامه‌نگار</a></li>
+        <li><a href="#" onclick="showHome()"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a href="#" onclick="showLetter()"><i class="fas fa-scroll"></i> نامه‌نگار</a></li>
         <li><a href="#podcast"><i class="fas fa-podcast"></i> پادکست</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> تماس</a></li>
     </ul>
 </nav>
 
-<!-- صفحه نامه‌نگار -->
-<div class="container" id="home">
-    <section class="letter-page" id="letter">
+<!-- ====== محتوای اصلی ====== -->
+<div class="container">
+
+    <!-- ====== صفحه خانه ====== -->
+    <section class="home-intro" id="homeSection">
+        <h2 class="section-title"><i class="fas fa-crown"></i> مشاهیر هخامنشی</h2>
+        <p class="section-sub">با بزرگ‌ترین شخصیت‌های تاریخ ایران آشنا شوید</p>
+
+        <div class="featured-card">
+            <div class="card-image">
+                <img src="https://uploadkon.ir/uploads/17db07_26Cyrus-.png" alt="کوروش بزرگ">
+            </div>
+            <div class="card-content">
+                <span class="badge-top"><i class="fas fa-star"></i> مشاهیر هخامنشی</span>
+                <h2><i class="fas fa-crown"></i> کوروش بزرگ</h2>
+                <div class="role"><i class="fas fa-king"></i> بنیانگذار شاهنشاهی هخامنشی</div>
+                <p>
+                    کوروش بزرگ، بنیانگذار امپراتوری هخامنشی و نخستین شاهنشاه ایران بود. 
+                    او با متحد کردن قبایل پارس و ماد، بزرگترین امپراتوری جهان را تا آن زمان 
+                    پایه‌گذاری کرد و به عنوان یکی از بزرگترین فرمانروایان تاریخ شناخته می‌شود.
+                </p>
+                <div class="tags">
+                    <span><i class="fas fa-scroll"></i> منشور حقوق بشر</span>
+                    <span><i class="fas fa-flag"></i> ۵۵۰ پ.م</span>
+                    <span><i class="fas fa-monument"></i> آرامگاه در پاسارگاد</span>
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn-primary" onclick="showLetter()">
+                        <i class="fas fa-arrow-left"></i> توضیحات بیشتر
+                    </a>
+                    <a href="#" class="btn-outline" onclick="showLetter()">
+                        <i class="fas fa-scroll"></i> مشاهده نامه‌نگار
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== صفحه نامه‌نگار (کوروش) ====== -->
+    <section class="letter-page" id="letterSection">
+        <button class="back-home-btn" onclick="showHome()">
+            <i class="fas fa-arrow-right"></i> بازگشت به خانه
+        </button>
+        
         <h2 class="page-title"><i class="fas fa-scroll"></i> نامه‌نگار</h2>
-        <p class="page-subtitle">شناخت نامه مشاهیر هخامنشی</p>
+        <p class="page-subtitle">شناخت نامه کوروش بزرگ</p>
 
-        <!-- کارت اصلی کوروش با عکس در بالا -->
+        <!-- کارت 1: معرفی -->
         <div class="letter-card">
-            <!-- عکس بزرگ در بالای کارت -->
-            <img src="https://uploadkon.ir/uploads/17db07_26Cyrus-.png" alt="کوروش بزرگ" class="profile-img">
-            
-            <div class="card-header">
-                <div class="icon-box">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3>کوروش بزرگ</h3>
-                <span class="badge"><i class="fas fa-calendar-alt"></i> ۵۵۰ پ.م</span>
-            </div>
-            
-            <p>
-                <i class="fas fa-quote-right" style="color: #1a1a1a; font-size: 1.5rem; float: right; margin-left: 15px;"></i>
-                <strong>کوروش بزرگ (کوروش دوم هخامنشی)</strong> بنیان‌گذار شاهنشاهی هخامنشی و یکی از مشهورترین پادشاهان تاریخ ایران است. او با متحد کردن قبایل پارس و ماد، نخستین امپراتوری بزرگ ایران را پایه‌گذاری کرد و قلمرو آن را از آسیای مرکزی تا سواحل مدیترانه گسترش داد.
-            </p>
-        </div>
-
-        <!-- اطلاعات کلی -->
-        <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-info-circle"></i></div>
-                <h3>اطلاعات کلی</h3>
+                <h3>معرفی کوروش بزرگ</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fas fa-user-tag"></i>
-                    <div>
-                        <div class="label">نام</div>
-                        <div class="value">کوروش دوم (کوروش بزرگ)</div>
+            <div class="card-body">
+                <p>
+                    <strong>کوروش بزرگ (کوروش دوم هخامنشی)</strong> بنیان‌گذار شاهنشاهی هخامنشی و یکی از مشهورترین پادشاهان تاریخ ایران است. او با متحد کردن قبایل پارس و ماد، نخستین امپراتوری بزرگ ایران را پایه‌گذاری کرد و قلمرو آن را از آسیای مرکزی تا سواحل مدیترانه گسترش داد.
+                </p>
+            </div>
+        </div>
+
+        <!-- کارت 2: اطلاعات کلی -->
+        <div class="letter-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <div class="icon-box"><i class="fas fa-address-card"></i></div>
+                <h3>اطلاعات کلی</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="card-body">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-user-tag"></i>
+                        <div>
+                            <div class="label">نام</div>
+                            <div class="value">کوروش دوم (کوروش بزرگ)</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-tree"></i>
-                    <div>
-                        <div class="label">دودمان</div>
-                        <div class="value">هخامنشی</div>
+                    <div class="info-item">
+                        <i class="fas fa-tree"></i>
+                        <div>
+                            <div class="label">دودمان</div>
+                            <div class="value">هخامنشی</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-user-father"></i>
-                    <div>
-                        <div class="label">پدر</div>
-                        <div class="value">کمبوجیه یکم</div>
+                    <div class="info-item">
+                        <i class="fas fa-user-father"></i>
+                        <div>
+                            <div class="label">پدر</div>
+                            <div class="value">کمبوجیه یکم</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-user-mother"></i>
-                    <div>
-                        <div class="label">مادر</div>
-                        <div class="value">ماندانا (بر اساس برخی منابع یونانی)</div>
+                    <div class="info-item">
+                        <i class="fas fa-user-mother"></i>
+                        <div>
+                            <div class="label">مادر</div>
+                            <div class="value">ماندانا</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-birthday-cake"></i>
-                    <div>
-                        <div class="label">سال تولد</div>
-                        <div class="value">حدود ۶۰۰ تا ۵۷۶ پ.م</div>
+                    <div class="info-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>
+                            <div class="label">سال تولد</div>
+                            <div class="value">حدود ۶۰۰ تا ۵۷۶ پ.م</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-flag-checkered"></i>
-                    <div>
-                        <div class="label">آغاز پادشاهی</div>
-                        <div class="value">حدود ۵۵۹ پ.م</div>
+                    <div class="info-item">
+                        <i class="fas fa-flag-checkered"></i>
+                        <div>
+                            <div class="label">آغاز پادشاهی</div>
+                            <div class="value">حدود ۵۵۹ پ.م</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-skull"></i>
-                    <div>
-                        <div class="label">سال درگذشت</div>
-                        <div class="value">۵۳۰ پ.م</div>
+                    <div class="info-item">
+                        <i class="fas fa-skull"></i>
+                        <div>
+                            <div class="label">سال درگذشت</div>
+                            <div class="value">۵۳۰ پ.م</div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-monument"></i>
-                    <div>
-                        <div class="label">محل آرامگاه</div>
-                        <div class="value">پاسارگاد، استان فارس، ایران</div>
+                    <div class="info-item">
+                        <i class="fas fa-monument"></i>
+                        <div>
+                            <div class="label">محل آرامگاه</div>
+                            <div class="value">پاسارگاد، فارس</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- مهم‌ترین رویدادها -->
+        <!-- کارت 3: رویدادها -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-timeline"></i></div>
                 <h3>مهم‌ترین رویدادها</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            
-            <div class="highlight-box">
-                <i class="fas fa-handshake"></i>
-                <strong>اتحاد ایران:</strong> در سال ۵۵۰ پیش از میلاد، کوروش بر آستیاگ، آخرین پادشاه ماد، پیروز شد و حکومت ماد و پارس را متحد کرد. این رویداد آغاز شاهنشاهی هخامنشی بود.
-            </div>
-            
-            <div class="highlight-box">
-                <i class="fas fa-helmet-battle"></i>
-                <strong>فتح لیدیه:</strong> کوروش پس از شکست کرزوس، پادشاه لیدیه، بخش بزرگی از آسیای صغیر را به قلمرو ایران افزود.
-            </div>
-            
-            <div class="highlight-box">
-                <i class="fas fa-city"></i>
-                <strong>فتح بابل:</strong> در سال ۵۳۹ پیش از میلاد، کوروش شهر بابل را تصرف کرد. منابع بابلی نشان می‌دهند که شهر بدون ویرانی گسترده فتح شد.
+            <div class="card-body">
+                <div class="highlight-box">
+                    <i class="fas fa-handshake"></i>
+                    <strong>اتحاد ایران:</strong> در سال ۵۵۰ پ.م، کوروش بر آستیاگ، آخرین پادشاه ماد، پیروز شد و حکومت ماد و پارس را متحد کرد.
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-helmet-battle"></i>
+                    <strong>فتح لیدیه:</strong> کوروش پس از شکست کرزوس، بخش بزرگی از آسیای صغیر را به قلمرو ایران افزود.
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-city"></i>
+                    <strong>فتح بابل:</strong> در سال ۵۳۹ پ.م، کوروش شهر بابل را بدون ویرانی گسترده تصرف کرد.
+                </div>
             </div>
         </div>
 
-        <!-- استوانه کوروش -->
+        <!-- کارت 4: استوانه کوروش -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-scroll"></i></div>
                 <h3>استوانه کوروش</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <p>
-                استوانه کوروش یک کتیبه گِلی به خط میخی اکدی است که پس از فتح بابل نوشته شد. در آن، از بازسازی معابد و بازگرداندن برخی مردمان و پیکره‌های خدایان به سرزمین‌هایشان سخن گفته شده است.
-            </p>
-            <div class="highlight-box" style="border-right-color: #aaa;">
-                <i class="fas fa-info-circle"></i>
-                برخی آن را «نخستین منشور حقوق بشر» می‌نامند، اما بسیاری از پژوهشگران این عنوان را یک برداشت امروزی می‌دانند و استوانه را یک کتیبه سلطنتی بابلی توصیف می‌کنند.
+            <div class="card-body">
+                <p>
+                    استوانه کوروش یک کتیبه گِلی به خط میخی اکدی است که پس از فتح بابل نوشته شد. در آن، از بازسازی معابد و بازگرداندن برخی مردمان و پیکره‌های خدایان به سرزمین‌هایشان سخن گفته شده است.
+                </p>
+                <div class="highlight-box" style="border-right-color: #aaa;">
+                    <i class="fas fa-info-circle"></i>
+                    برخی آن را «نخستین منشور حقوق بشر» می‌نامند، اما بسیاری از پژوهشگران این عنوان را یک برداشت امروزی می‌دانند و استوانه را یک کتیبه سلطنتی بابلی توصیف می‌کنند.
+                </div>
             </div>
         </div>
 
-        <!-- شیوه حکومت -->
+        <!-- کارت 5: شیوه حکومت -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-gavel"></i></div>
                 <h3>شیوه حکومت</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <p>
-                کوروش به احترام گذاشتن به فرهنگ‌ها و آیین‌های مردمان سرزمین‌های مختلف شهرت دارد. او در بسیاری از مناطق، ساختارهای محلی را حفظ کرد و از این طریق ثبات بیشتری در امپراتوری ایجاد شد.
-            </p>
+            <div class="card-body">
+                <p>
+                    کوروش به احترام گذاشتن به فرهنگ‌ها و آیین‌های مردمان سرزمین‌های مختلف شهرت دارد. او در بسیاری از مناطق، ساختارهای محلی را حفظ کرد و از این طریق ثبات بیشتری در امپراتوری ایجاد شد.
+                </p>
+            </div>
         </div>
 
-        <!-- مرگ و آرامگاه -->
+        <!-- کارت 6: مرگ و آرامگاه -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-monument"></i></div>
                 <h3>مرگ و آرامگاه</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <p>
-                <strong>مرگ:</strong> کوروش در سال ۵۳۰ پیش از میلاد در نبرد با اقوام شرقی جان باخت. درباره چگونگی مرگ او روایت‌های گوناگونی وجود دارد و مورخان بر یک روایت واحد توافق ندارند.
-            </p>
-            <p>
-                <strong>آرامگاه کوروش:</strong> آرامگاه کوروش در مجموعه تاریخی پاسارگاد قرار دارد. این بنا از سنگ‌های بزرگ آهکی ساخته شده و بیش از ۲۵۰۰ سال قدمت دارد. مجموعه پاسارگاد در فهرست میراث جهانی یونسکو ثبت شده است.
-            </p>
+            <div class="card-body">
+                <p>
+                    <strong>مرگ:</strong> کوروش در سال ۵۳۰ پ.م در نبرد با اقوام شرقی جان باخت. درباره چگونگی مرگ او روایت‌های گوناگونی وجود دارد.
+                </p>
+                <p>
+                    <strong>آرامگاه کوروش:</strong> آرامگاه کوروش در مجموعه تاریخی پاسارگاد قرار دارد. این بنا از سنگ‌های بزرگ آهکی ساخته شده و بیش از ۲۵۰۰ سال قدمت دارد. پاسارگاد در فهرست میراث جهانی یونسکو ثبت شده است.
+                </p>
+            </div>
         </div>
 
-        <!-- اهمیت تاریخی -->
+        <!-- کارت 7: اهمیت تاریخی -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-star"></i></div>
                 <h3>اهمیت تاریخی</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> بنیان‌گذار شاهنشاهی هخامنشی</li>
-                <li><i class="fas fa-check-circle"></i> یکی از بزرگ‌ترین فرمانروایان ایران باستان</li>
-                <li><i class="fas fa-check-circle"></i> ایجاد یکی از وسیع‌ترین امپراتوری‌های زمان خود</li>
-                <li><i class="fas fa-check-circle"></i> تأثیرگذار در تاریخ سیاسی و فرهنگی خاورمیانه</li>
-            </ul>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> بنیان‌گذار شاهنشاهی هخامنشی</li>
+                    <li><i class="fas fa-check-circle"></i> یکی از بزرگ‌ترین فرمانروایان ایران باستان</li>
+                    <li><i class="fas fa-check-circle"></i> ایجاد یکی از وسیع‌ترین امپراتوری‌های زمان خود</li>
+                    <li><i class="fas fa-check-circle"></i> تأثیرگذار در تاریخ سیاسی و فرهنگی خاورمیانه</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- منابع -->
+        <!-- کارت 8: منابع -->
         <div class="letter-card">
-            <div class="card-header">
+            <div class="card-header" onclick="toggleCard(this)">
                 <div class="icon-box"><i class="fas fa-book"></i></div>
                 <h3>منابع</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-            <div class="source-list">
-                <span><i class="fas fa-book-open"></i> دانشنامه ایرانیکا، مقاله «Cyrus»</span>
-                <span><i class="fas fa-book-open"></i> دائرةالمعارف بریتانیکا، مدخل «Cyrus the Great»</span>
-                <span><i class="fas fa-university"></i> موزه بریتانیا، معرفی استوانه کوروش</span>
-                <span><i class="fas fa-scroll"></i> هرودوت، تاریخ</span>
-                <span><i class="fas fa-scroll"></i> گزنفون، کوروش‌نامه (Cyropaedia)</span>
-                <span><i class="fas fa-scroll"></i> نبونعیدنامه (Nabonidus Chronicle)</span>
+            <div class="card-body">
+                <div class="source-list">
+                    <span><i class="fas fa-book-open"></i> دانشنامه ایرانیکا، «Cyrus»</span>
+                    <span><i class="fas fa-book-open"></i> دائرةالمعارف بریتانیکا، «Cyrus the Great»</span>
+                    <span><i class="fas fa-university"></i> موزه بریتانیا، استوانه کوروش</span>
+                    <span><i class="fas fa-scroll"></i> هرودوت، تاریخ</span>
+                    <span><i class="fas fa-scroll"></i> گزنفون، کوروش‌نامه</span>
+                    <span><i class="fas fa-scroll"></i> نبونعیدنامه</span>
+                </div>
             </div>
         </div>
 
     </section>
 </div>
 
-<!-- فوتر -->
+<!-- ====== فوتر ====== -->
 <footer class="footer">
     <div class="footer-content">
         <div>
             <h4><i class="fas fa-gem"></i> پاسارگاد</h4>
             <p>دانشنامه تخصصی تاریخ و تمدن هخامنشیان</p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #888;">
-                <i class="fas fa-map-marker-alt"></i> تهران، ایران
-            </p>
         </div>
         <div>
             <h4><i class="fas fa-link"></i> پیوندها</h4>
             <a href="#"><i class="fas fa-chevron-left"></i> مقالات</a>
             <a href="#"><i class="fas fa-chevron-left"></i> پادکست‌ها</a>
             <a href="#"><i class="fas fa-chevron-left"></i> گالری تصاویر</a>
-            <a href="#"><i class="fas fa-chevron-left"></i> نقشه سایت</a>
         </div>
         <div>
             <h4><i class="fas fa-share-alt"></i> شبکه‌های اجتماعی</h4>
             <a href="#"><i class="fab fa-telegram"></i> تلگرام</a>
             <a href="#"><i class="fab fa-instagram"></i> اینستاگرام</a>
             <a href="#"><i class="fab fa-youtube"></i> یوتیوب</a>
-            <a href="#"><i class="fab fa-twitter"></i> توییتر</a>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>
-            <i class="fas fa-crown"></i> پاسارگاد؛ دانشنامه تاریخ هخامنشیان <i class="fas fa-crown"></i>
-        </p>
-        <p style="margin-top: 10px; font-size: 0.85rem;">
-            <i class="fas fa-code"></i> طراحی شده برای عاشقان تاریخ و تمدن ایران
-        </p>
-        <p style="margin-top: 5px; font-size: 0.8rem; color: #aaa;">
-            تمامی حقوق مادی و معنوی این سایت محفوظ است.
-        </p>
+        <p><i class="fas fa-crown"></i> پاسارگاد؛ دانشنامه تاریخ هخامنشیان <i class="fas fa-crown"></i></p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">طراحی شده برای عاشقان تاریخ ایران</p>
     </div>
 </footer>
 
-<!-- دکمه بازگشت -->
-<a href="#" class="back-to-top">
-    <i class="fas fa-chevron-up"></i>
-</a>
+<a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
 
 <script>
-    // نوار ناوبری اسکرول
+    // نوار ناوبری
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 50) {
@@ -780,6 +1023,49 @@
             navbar.classList.remove('scrolled');
         }
     });
+
+    // نمایش/مخفی کردن صفحه‌ها
+    function showHome() {
+        document.getElementById('homeSection').style.display = 'block';
+        document.getElementById('letterSection').classList.remove('active');
+        document.getElementById('letterSection').style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showLetter() {
+        document.getElementById('homeSection').style.display = 'none';
+        document.getElementById('letterSection').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('letterSection').classList.add('active');
+        }, 10);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // کشویی (آکاردئون)
+    function toggleCard(headerElement) {
+        const card = headerElement.closest('.letter-card');
+        const body = card.querySelector('.card-body');
+        const icon = card.querySelector('.toggle-icon i');
+        
+        // بستن بقیه کارت‌ها (اختیاری - برای باز شدن یکی یکی)
+        // document.querySelectorAll('.letter-card .card-body').forEach(b => {
+        //     if (b !== body && b.classList.contains('open')) {
+        //         b.classList.remove('open');
+        //         b.closest('.letter-card').querySelector('.toggle-icon i').className = 'fas fa-chevron-down';
+        //     }
+        // });
+        
+        body.classList.toggle('open');
+        if (body.classList.contains('open')) {
+            icon.className = 'fas fa-chevron-up';
+        } else {
+            icon.className = 'fas fa-chevron-down';
+        }
+    }
+
+    // پیش‌فرض صفحه خانه نمایش داده بشه
+    document.getElementById('homeSection').style.display = 'block';
+    document.getElementById('letterSection').style.display = 'none';
 </script>
 
 </body>
