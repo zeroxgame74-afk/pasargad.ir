@@ -125,15 +125,17 @@
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
             color: #333;
             text-decoration: none;
             font-size: 1rem;
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 30px;
             transition: 0.3s;
             position: relative;
@@ -166,6 +168,16 @@
             color: #1a1a1a;
         }
         
+        .nav-links a .soon-badge {
+            font-size: 0.55rem;
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 5px;
+            vertical-align: super;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -174,7 +186,7 @@
             z-index: 1;
         }
         
-        /* ====== صفحه خانه (معرفی سایت) ====== */
+        /* ====== صفحه خانه ====== */
         .home-intro {
             padding: 80px 0 60px;
         }
@@ -318,7 +330,85 @@
             margin-left: 8px;
         }
         
-        /* بخش مشاهیر - هدف نامه‌نگار */
+        /* ====== گالری ====== */
+        .gallery-section {
+            scroll-margin-top: 100px;
+            padding: 40px 0;
+        }
+        
+        .gallery-section .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-section .section-title i {
+            margin-left: 15px;
+            color: #1a1a1a;
+        }
+        
+        .gallery-section .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        .coming-soon-box {
+            background: #f8f8f8;
+            border-radius: 40px;
+            padding: 80px 40px;
+            text-align: center;
+            border: 2px dashed #1a1a1a;
+            border-spacing: 10px;
+        }
+        
+        .coming-soon-box .big-icon {
+            font-size: 5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .coming-soon-box h3 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .coming-soon-box p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .coming-soon-box .loader-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .coming-soon-box .loader-dots span {
+            width: 14px;
+            height: 14px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            animation: dotPulse 1.4s infinite ease-in-out both;
+        }
+        
+        .coming-soon-box .loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .coming-soon-box .loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes dotPulse {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        
+        /* بخش مشاهیر */
         .personalities-section {
             scroll-margin-top: 100px;
             padding-top: 20px;
@@ -445,7 +535,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         
-        /* ====== صفحات نامه‌نگار (صفحات اختصاصی) ====== */
+        /* ====== صفحات نامه‌نگار ====== */
         .letter-page {
             display: none;
             padding: 80px 0 60px;
@@ -754,7 +844,7 @@
             color: #1a1a1a;
         }
         
-        /* فوتر */
+        /* ====== فوتر جدید ====== */
         .footer {
             background: #f8f8f8;
             padding: 60px 30px 30px;
@@ -803,9 +893,27 @@
             color: #888;
         }
         
-        .footer-bottom i {
+        .footer-bottom .version {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-bottom .version i {
             color: #1a1a1a;
             margin: 0 5px;
+        }
+        
+        .footer-bottom .copyright {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        .footer-bottom .copyright i {
+            color: #1a1a1a;
+            margin: 0 3px;
         }
         
         .back-to-top {
@@ -850,14 +958,13 @@
             }
             
             .nav-links {
-                gap: 10px;
-                flex-wrap: wrap;
+                gap: 8px;
                 justify-content: center;
             }
             
             .nav-links a {
-                font-size: 0.85rem;
-                padding: 5px 12px;
+                font-size: 0.8rem;
+                padding: 5px 10px;
             }
             
             .site-intro {
@@ -901,6 +1008,14 @@
             .master-card .sections .section-item .sec-body .info-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .coming-soon-box {
+                padding: 50px 20px;
+            }
+            
+            .coming-soon-box h3 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -925,6 +1040,8 @@
     <ul class="nav-links">
         <li><a onclick="goToHome()"><i class="fas fa-home"></i> خانه</a></li>
         <li><a onclick="goToPersonalities()"><i class="fas fa-scroll"></i> نامه‌نگار</a></li>
+        <li><a onclick="goToGallery()"><i class="fas fa-images"></i> گالری <span class="soon-badge">به زودی</span></a></li>
+        <li><a onclick="goToPodcast()"><i class="fas fa-podcast"></i> پادکست <span class="soon-badge">به زودی</span></a></li>
         <li><a onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'})"><i class="fas fa-envelope"></i> تماس</a></li>
     </ul>
 </nav>
@@ -932,12 +1049,12 @@
 <!-- ====== محتوای اصلی ====== -->
 <div class="container">
 
-    <!-- ====== صفحه خانه (معرفی سایت) ====== -->
+    <!-- ====== صفحه خانه ====== -->
     <section class="home-intro" id="homeSection">
         <h2 class="section-title"><i class="fas fa-info-circle"></i> خانه</h2>
         <p class="section-sub">با دانشنامه تاریخ هخامنشیان آشنا شوید</p>
 
-        <!-- جعبه معرفی سایت - هدف اصلی -->
+        <!-- جعبه معرفی سایت -->
         <div class="site-intro" id="siteIntro">
             <div class="big-icon">
                 <i class="fas fa-landmark"></i>
@@ -1035,7 +1152,41 @@
             </p>
         </div>
         
-        <!-- بخش مشاهیر هخامنشی (نامه‌نگار) -->
+        <!-- ====== بخش گالری ====== -->
+        <div class="gallery-section" id="gallerySection">
+            <h2 class="section-title"><i class="fas fa-images"></i> گالری تصاویر</h2>
+            <p class="section-sub">تماشای زیبایی‌های تاریخ هخامنشی</p>
+            
+            <div class="coming-soon-box">
+                <span class="big-icon"><i class="fas fa-camera-retro"></i></span>
+                <h3>به زودی...</h3>
+                <p>گالری تصاویر با کیفیت بالا از آثار تاریخی هخامنشی در حال آماده‌سازی است</p>
+                <div class="loader-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ====== بخش پادکست ====== -->
+        <div class="gallery-section" id="podcastSection" style="padding-top:0;">
+            <h2 class="section-title"><i class="fas fa-podcast"></i> پادکست</h2>
+            <p class="section-sub">روایت تاریخ به زبان ساده و جذاب</p>
+            
+            <div class="coming-soon-box">
+                <span class="big-icon"><i class="fas fa-headphones"></i></span>
+                <h3>به زودی...</h3>
+                <p>پادکست‌های اختصاصی با روایت تاریخ هخامنشیان در حال تولید هستند</p>
+                <div class="loader-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ====== بخش مشاهیر ====== -->
         <div class="personalities-section" id="personalitiesSection">
             <h2 class="section-title"><i class="fas fa-crown"></i> مشاهیر هخامنشی</h2>
             <p class="section-sub">با بزرگ‌ترین شخصیت‌های تاریخ ایران آشنا شوید</p>
@@ -1348,17 +1499,22 @@
     
 </div>
 
-<!-- ====== فوتر ====== -->
+<!-- ====== فوتر جدید ====== -->
 <footer class="footer">
     <div class="footer-content">
         <div>
             <h4><i class="fas fa-gem"></i> پاسارگاد</h4>
             <p>دانشنامه تخصصی تاریخ و تمدن هخامنشیان</p>
+            <p style="margin-top:8px; font-size:0.85rem; color:#888;">
+                <i class="fas fa-code"></i> نسخه ۱.۱.۱
+            </p>
         </div>
         <div>
             <h4><i class="fas fa-link"></i> پیوندها</h4>
             <a onclick="goToHome()"><i class="fas fa-chevron-left"></i> خانه</a>
             <a onclick="goToPersonalities()"><i class="fas fa-chevron-left"></i> نامه‌نگار</a>
+            <a onclick="goToGallery()"><i class="fas fa-chevron-left"></i> گالری</a>
+            <a onclick="goToPodcast()"><i class="fas fa-chevron-left"></i> پادکست</a>
             <a onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chevron-left"></i> تماس</a>
         </div>
         <div>
@@ -1366,11 +1522,16 @@
             <a href="#"><i class="fab fa-telegram"></i> تلگرام</a>
             <a href="#"><i class="fab fa-instagram"></i> اینستاگرام</a>
             <a href="#"><i class="fab fa-youtube"></i> یوتیوب</a>
+            <a href="#"><i class="fab fa-twitter"></i> توییتر</a>
         </div>
     </div>
     <div class="footer-bottom">
-        <p><i class="fas fa-crown"></i> پاسارگاد؛ دانشنامه تاریخ هخامنشیان <i class="fas fa-crown"></i></p>
-        <p style="margin-top:10px; font-size:0.85rem;">طراحی شده برای عاشقان تاریخ ایران</p>
+        <p class="copyright">
+            <i class="fas fa-crown"></i> ®۲۰۲۶ پاسارگاد | تمام اطلاعات محفوظ سایت پاسارگاد است <i class="fas fa-crown"></i>
+        </p>
+        <p class="version">
+            <i class="fas fa-code"></i> نسخه ۱.۱.۱ <i class="fas fa-circle" style="font-size:0.4rem; vertical-align:middle;"></i> <i class="fas fa-heart" style="color:#1a1a1a;"></i> طراحی شده برای عاشقان تاریخ ایران
+        </p>
     </div>
 </footer>
 
@@ -1387,31 +1548,51 @@
         }
     });
 
-    // رفتن به خانه (بخش معرفی سایت)
+    // رفتن به خانه
     function goToHome() {
-        // نمایش بخش خانه
         document.getElementById('homeSection').style.display = 'block';
         document.querySelectorAll('.letter-page').forEach(p => {
             p.classList.remove('active');
             p.style.display = 'none';
         });
-        // اسکرول به بخش معرفی سایت
         setTimeout(() => {
             document.getElementById('siteIntro').scrollIntoView({ behavior: 'smooth' });
         }, 100);
     }
 
-    // رفتن به نامه‌نگار (کارت‌های مشاهیر)
+    // رفتن به نامه‌نگار
     function goToPersonalities() {
-        // نمایش بخش خانه
         document.getElementById('homeSection').style.display = 'block';
         document.querySelectorAll('.letter-page').forEach(p => {
             p.classList.remove('active');
             p.style.display = 'none';
         });
-        // اسکرول به بخش مشاهیر
         setTimeout(() => {
             document.getElementById('personalitiesSection').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+
+    // رفتن به گالری
+    function goToGallery() {
+        document.getElementById('homeSection').style.display = 'block';
+        document.querySelectorAll('.letter-page').forEach(p => {
+            p.classList.remove('active');
+            p.style.display = 'none';
+        });
+        setTimeout(() => {
+            document.getElementById('gallerySection').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+
+    // رفتن به پادکست
+    function goToPodcast() {
+        document.getElementById('homeSection').style.display = 'block';
+        document.querySelectorAll('.letter-page').forEach(p => {
+            p.classList.remove('active');
+            p.style.display = 'none';
+        });
+        setTimeout(() => {
+            document.getElementById('podcastSection').scrollIntoView({ behavior: 'smooth' });
         }, 100);
     }
 
