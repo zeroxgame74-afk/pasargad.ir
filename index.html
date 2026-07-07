@@ -137,6 +137,7 @@
             border-radius: 30px;
             transition: 0.3s;
             position: relative;
+            cursor: pointer;
         }
         
         .nav-links a::after {
@@ -173,7 +174,7 @@
             z-index: 1;
         }
         
-        /* صفحه خانه */
+        /* ====== صفحه خانه (معرفی سایت) ====== */
         .home-intro {
             padding: 80px 0 60px;
         }
@@ -198,11 +199,130 @@
             margin-bottom: 50px;
         }
         
+        /* جعبه معرفی سایت */
+        .site-intro {
+            background: #f8f8f8;
+            border-radius: 40px;
+            padding: 50px 55px;
+            border: 1px solid rgba(0,0,0,0.06);
+            margin-bottom: 60px;
+        }
+        
+        .site-intro .big-icon {
+            text-align: center;
+            font-size: 4rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .site-intro h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .site-intro p {
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            text-align: justify;
+        }
+        
+        .site-intro .highlight-box {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 20px;
+            border-right: 5px solid #1a1a1a;
+            margin: 25px 0;
+            font-size: 1.05rem;
+            color: #333;
+        }
+        
+        .site-intro .highlight-box i {
+            color: #1a1a1a;
+            margin-left: 12px;
+        }
+        
+        .site-intro .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0 20px;
+        }
+        
+        .site-intro .feature-grid .feat {
+            background: #ffffff;
+            padding: 25px 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        
+        .site-intro .feature-grid .feat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        
+        .site-intro .feature-grid .feat i {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .site-intro .feature-grid .feat h4 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .site-intro .feature-grid .feat p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+        
+        .site-intro .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(0,0,0,0.04);
+            margin: 30px 0 20px;
+        }
+        
+        .site-intro .stats .stat-item {
+            text-align: center;
+        }
+        
+        .site-intro .stats .stat-item .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+        }
+        
+        .site-intro .stats .stat-item .label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .site-intro .stats .stat-item i {
+            color: #1a1a1a;
+            margin-left: 8px;
+        }
+        
         /* کارت‌های مشاهیر در خانه */
         .personality-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
+            margin-top: 40px;
         }
         
         .personality-card {
@@ -355,7 +475,6 @@
             margin-bottom: 40px;
         }
         
-        /* کارت اصلی - همه چیز در یک کارت */
         .master-card {
             background: #f8f8f8;
             border-radius: 40px;
@@ -442,7 +561,6 @@
             color: #1a1a1a;
         }
         
-        /* بخش‌های ستونی */
         .master-card .sections {
             display: flex;
             flex-direction: column;
@@ -715,6 +833,19 @@
                 padding: 5px 12px;
             }
             
+            .site-intro {
+                padding: 25px 20px;
+            }
+            
+            .site-intro .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-intro .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
             .personality-grid {
                 grid-template-columns: 1fr;
             }
@@ -765,10 +896,9 @@
         <i class="fas fa-gem"></i> پاسارگاد
     </div>
     <ul class="nav-links">
-        <li><a href="#" onclick="showHome()"><i class="fas fa-home"></i> خانه</a></li>
-        <li><a href="#" onclick="showHome()"><i class="fas fa-scroll"></i> نامه‌نگار</a></li>
-        <li><a href="#"><i class="fas fa-podcast"></i> پادکست</a></li>
-        <li><a href="#"><i class="fas fa-envelope"></i> تماس</a></li>
+        <li><a onclick="showHome()"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a onclick="document.getElementById('homeSection').scrollIntoView({behavior:'smooth'})"><i class="fas fa-scroll"></i> نامه‌نگار</a></li>
+        <li><a onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'})"><i class="fas fa-envelope"></i> تماس</a></li>
     </ul>
 </nav>
 
@@ -777,7 +907,108 @@
 
     <!-- ====== صفحه خانه ====== -->
     <section class="home-intro" id="homeSection">
-        <h2 class="section-title"><i class="fas fa-crown"></i> مشاهیر هخامنشی</h2>
+        <h2 class="section-title"><i class="fas fa-info-circle"></i> خانه</h2>
+        <p class="section-sub">با دانشنامه تاریخ هخامنشیان آشنا شوید</p>
+
+        <!-- معرفی کامل سایت -->
+        <div class="site-intro">
+            <div class="big-icon">
+                <i class="fas fa-landmark"></i>
+            </div>
+            <h2>به پاسارگاد خوش آمدید</h2>
+            
+            <p>
+                <strong>پاسارگاد</strong> یک <strong>دانشنامه تخصصی و جامع</strong> درباره تاریخ، فرهنگ و تمدن 
+                هخامنشیان است که با هدف <strong>حفظ و انتشار میراث کهن ایران زمین</strong> طراحی و راه‌اندازی شده است.
+            </p>
+            
+            <div class="highlight-box">
+                <i class="fas fa-quote-right"></i>
+                این سایت یک مرجع کامل برای مطالعه و آشنایی با بزرگ‌ترین امپراتوری ایران باستان است.
+            </div>
+            
+            <p>
+                <strong>این سایت برای چه کسانی مفید است؟</strong>
+            </p>
+            <p>
+                <i class="fas fa-user-graduate" style="color:#1a1a1a; margin-left:10px;"></i>
+                <strong>دانشجویان و پژوهشگران تاریخ:</strong> دسترسی به مقالات تخصصی، اسناد کهن و تحلیل‌های تاریخی
+                <br>
+                <i class="fas fa-chalkboard-teacher" style="color:#1a1a1a; margin-left:10px;"></i>
+                <strong>معلمان و اساتید:</strong> منابع آموزشی معتبر برای تدریس تاریخ ایران باستان
+                <br>
+                <i class="fas fa-map-signs" style="color:#1a1a1a; margin-left:10px;"></i>
+                <strong>توریست‌ها و علاقه‌مندان:</strong> راهنمای جامع بازدید از پاسارگاد و آثار هخامنشی
+                <br>
+                <i class="fas fa-podcast" style="color:#1a1a1a; margin-left:10px;"></i>
+                <strong>عموم مردم:</strong> محتوای جذاب و شنیدنی برای آشنایی با شکوه ایران باستان
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feat">
+                    <i class="fas fa-scroll"></i>
+                    <h4>مقالات تخصصی</h4>
+                    <p>بیش از ۱۵۰ مقاله درباره شخصیت‌ها، رویدادها و آثار هخامنشی</p>
+                </div>
+                <div class="feat">
+                    <i class="fas fa-headphones"></i>
+                    <h4>پادکست اختصاصی</h4>
+                    <p>روایت تاریخ با صدای حرفه‌ای در قالب پادکست‌های جذاب</p>
+                </div>
+                <div class="feat">
+                    <i class="fas fa-images"></i>
+                    <h4>گالری تصاویر</h4>
+                    <p>بیش از ۳۰۰ تصویر باکیفیت از آثار باستانی و کتیبه‌ها</p>
+                </div>
+                <div class="feat">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>طراحی واکنش‌گرا</h4>
+                    <p>دسترسی آسان از تمام دستگاه‌ها با تجربه کاربری عالی</p>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-scroll"></i>
+                    <div class="number">۱۵۰+</div>
+                    <div class="label">مقاله تخصصی</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-podcast"></i>
+                    <div class="number">۴۰+</div>
+                    <div class="label">اپیزود پادکست</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-images"></i>
+                    <div class="number">۳۰۰+</div>
+                    <div class="label">تصویر تاریخی</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="number">۱۲,۰۰۰+</div>
+                    <div class="label">بازدیدکننده ماهانه</div>
+                </div>
+            </div>
+            
+            <p style="margin-top:20px;">
+                <strong>چه محتوایی در این سایت پیدا می‌کنید؟</strong>
+            </p>
+            <p>
+                ✅ <strong>مقالات جامع</strong> درباره شخصیت‌های تاریخی (کوروش، داریوش، کمبوجیه، خشایارشا و...)
+                <br>
+                ✅ <strong>اسناد کهن</strong> مانند استوانه کوروش، کتیبه بیستون و الواح گنجینه
+                <br>
+                ✅ <strong>معماری و شهرسازی</strong> پاسارگاد، تخت جمشید، شوش و سایر آثار
+                <br>
+                ✅ <strong>پادکست‌های اختصاصی</strong> با روایت تاریخ به زبان ساده و جذاب
+                <br>
+                ✅ <strong>گالری تصاویر</strong> با کیفیت بالا از آثار تاریخی
+                <br>
+                ✅ <strong>نقشه و راهنما</strong> برای بازدید از محوطه‌های باستانی
+            </p>
+        </div>
+        
+        <h2 class="section-title" style="font-size:2.2rem; margin-top:60px;"><i class="fas fa-crown"></i> مشاهیر هخامنشی</h2>
         <p class="section-sub">با بزرگ‌ترین شخصیت‌های تاریخ ایران آشنا شوید</p>
 
         <div class="personality-grid">
@@ -842,11 +1073,10 @@
                 
                 <div class="bio-text">
                     <i class="fas fa-quote-right" style="float:right; margin-left:15px; font-size:1.5rem;"></i>
-                    <strong>کوروش بزرگ (کوروش دوم هخامنشی)</strong> بنیان‌گذار شاهنشاهی هخامنشی و یکی از مشهورترین پادشاهان تاریخ ایران است. او با متحد کردن قبایل پارس و ماد، نخستین امپراتوری بزرگ ایران را پایه‌گذاری کرد و قلمرو آن را از آسیای مرکزی تا سواحل مدیترانه گسترش داد.
+                    <strong>کوروش بزرگ (کوروش دوم هخامنشی)</strong> بنیان‌گذار شاهنشاهی هخامنشی و یکی از مشهورترین پادشاهان تاریخ ایران است. او با متحد کردن قبایل پارس و ماد، نخستین امپراتوری بزرگ ایران را پایه‌گذاری کرد.
                 </div>
                 
                 <div class="sections">
-                    <!-- اطلاعات کلی -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-address-card"></i></div>
@@ -855,43 +1085,18 @@
                         </div>
                         <div class="sec-body">
                             <div class="info-grid">
-                                <div class="info-item">
-                                    <i class="fas fa-user-tag"></i>
-                                    <div><div class="label">نام</div><div class="value">کوروش دوم (کوروش بزرگ)</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-tree"></i>
-                                    <div><div class="label">دودمان</div><div class="value">هخامنشی</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user-father"></i>
-                                    <div><div class="label">پدر</div><div class="value">کمبوجیه یکم</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user-mother"></i>
-                                    <div><div class="label">مادر</div><div class="value">ماندانا</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    <div><div class="label">سال تولد</div><div class="value">حدود ۶۰۰ تا ۵۷۶ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-flag-checkered"></i>
-                                    <div><div class="label">آغاز پادشاهی</div><div class="value">حدود ۵۵۹ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-skull"></i>
-                                    <div><div class="label">سال درگذشت</div><div class="value">۵۳۰ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-monument"></i>
-                                    <div><div class="label">محل آرامگاه</div><div class="value">پاسارگاد، فارس</div></div>
-                                </div>
+                                <div class="info-item"><i class="fas fa-user-tag"></i><div><div class="label">نام</div><div class="value">کوروش دوم (کوروش بزرگ)</div></div></div>
+                                <div class="info-item"><i class="fas fa-tree"></i><div><div class="label">دودمان</div><div class="value">هخامنشی</div></div></div>
+                                <div class="info-item"><i class="fas fa-user-father"></i><div><div class="label">پدر</div><div class="value">کمبوجیه یکم</div></div></div>
+                                <div class="info-item"><i class="fas fa-user-mother"></i><div><div class="label">مادر</div><div class="value">ماندانا</div></div></div>
+                                <div class="info-item"><i class="fas fa-birthday-cake"></i><div><div class="label">سال تولد</div><div class="value">حدود ۶۰۰ تا ۵۷۶ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-flag-checkered"></i><div><div class="label">آغاز پادشاهی</div><div class="value">حدود ۵۵۹ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-skull"></i><div><div class="label">سال درگذشت</div><div class="value">۵۳۰ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-monument"></i><div><div class="label">محل آرامگاه</div><div class="value">پاسارگاد، فارس</div></div></div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- رویدادها -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-timeline"></i></div>
@@ -899,22 +1104,12 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <div class="highlight-box">
-                                <i class="fas fa-handshake"></i>
-                                <strong>اتحاد ایران:</strong> در سال ۵۵۰ پ.م، کوروش بر آستیاگ، آخرین پادشاه ماد، پیروز شد.
-                            </div>
-                            <div class="highlight-box">
-                                <i class="fas fa-helmet-battle"></i>
-                                <strong>فتح لیدیه:</strong> کوروش پس از شکست کرزوس، آسیای صغیر را فتح کرد.
-                            </div>
-                            <div class="highlight-box">
-                                <i class="fas fa-city"></i>
-                                <strong>فتح بابل:</strong> در سال ۵۳۹ پ.م، کوروش بابل را تصرف کرد.
-                            </div>
+                            <div class="highlight-box"><i class="fas fa-handshake"></i> <strong>اتحاد ایران:</strong> در سال ۵۵۰ پ.م، کوروش بر آستیاگ پیروز شد.</div>
+                            <div class="highlight-box"><i class="fas fa-helmet-battle"></i> <strong>فتح لیدیه:</strong> کوروش پس از شکست کرزوس، آسیای صغیر را فتح کرد.</div>
+                            <div class="highlight-box"><i class="fas fa-city"></i> <strong>فتح بابل:</strong> در سال ۵۳۹ پ.م، کوروش بابل را تصرف کرد.</div>
                         </div>
                     </div>
                     
-                    <!-- استوانه کوروش -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-scroll"></i></div>
@@ -922,17 +1117,10 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <p>
-                                استوانه کوروش یک کتیبه گِلی به خط میخی اکدی است که پس از فتح بابل نوشته شد. در آن، از بازسازی معابد و بازگرداندن برخی مردمان و پیکره‌های خدایان به سرزمین‌هایشان سخن گفته شده است.
-                            </p>
-                            <div class="highlight-box" style="border-right-color:#aaa;">
-                                <i class="fas fa-info-circle"></i>
-                                برخی آن را «نخستین منشور حقوق بشر» می‌نامند، اما بسیاری از پژوهشگران این عنوان را یک برداشت امروزی می‌دانند.
-                            </div>
+                            <p>استوانه کوروش یک کتیبه گِلی به خط میخی اکدی است که پس از فتح بابل نوشته شد. در آن، از بازسازی معابد و بازگرداندن مردمان سخن گفته شده است.</p>
                         </div>
                     </div>
                     
-                    <!-- شیوه حکومت -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-gavel"></i></div>
@@ -940,13 +1128,10 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <p>
-                                کوروش به احترام گذاشتن به فرهنگ‌ها و آیین‌های مردمان سرزمین‌های مختلف شهرت دارد. او در بسیاری از مناطق، ساختارهای محلی را حفظ کرد و از این طریق ثبات بیشتری در امپراتوری ایجاد شد.
-                            </p>
+                            <p>کوروش به احترام گذاشتن به فرهنگ‌ها و آیین‌های مردمان مختلف شهرت دارد و ساختارهای محلی را حفظ کرد.</p>
                         </div>
                     </div>
                     
-                    <!-- مرگ و آرامگاه -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-monument"></i></div>
@@ -954,16 +1139,11 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <p>
-                                <strong>مرگ:</strong> کوروش در سال ۵۳۰ پ.م در نبرد با اقوام شرقی جان باخت.
-                            </p>
-                            <p>
-                                <strong>آرامگاه کوروش:</strong> در مجموعه تاریخی پاسارگاد قرار دارد.
-                            </p>
+                            <p><strong>مرگ:</strong> کوروش در سال ۵۳۰ پ.م در نبرد با اقوام شرقی جان باخت.</p>
+                            <p><strong>آرامگاه:</strong> در مجموعه تاریخی پاسارگاد قرار دارد.</p>
                         </div>
                     </div>
                     
-                    <!-- منابع -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-book"></i></div>
@@ -974,9 +1154,7 @@
                             <div class="source-list">
                                 <span><i class="fas fa-book-open"></i> دانشنامه ایرانیکا</span>
                                 <span><i class="fas fa-book-open"></i> دائرةالمعارف بریتانیکا</span>
-                                <span><i class="fas fa-university"></i> موزه بریتانیا</span>
                                 <span><i class="fas fa-scroll"></i> هرودوت، تاریخ</span>
-                                <span><i class="fas fa-scroll"></i> گزنفون، کوروش‌نامه</span>
                             </div>
                         </div>
                     </div>
@@ -1010,11 +1188,10 @@
                 
                 <div class="bio-text">
                     <i class="fas fa-quote-right" style="float:right; margin-left:15px; font-size:1.5rem;"></i>
-                    <strong>داریوش یکم، مشهور به داریوش بزرگ،</strong> سومین شاهنشاه هخامنشی و یکی از بزرگ‌ترین فرمانروایان تاریخ ایران بود. او از سال ۵۲۲ تا ۴۸۶ پیش از میلاد حکومت کرد و با اصلاحات اداری، اقتصادی و عمرانی، شاهنشاهی هخامنشی را به اوج قدرت و سازمان‌یافتگی رساند.
+                    <strong>داریوش یکم، مشهور به داریوش بزرگ،</strong> سومین شاهنشاه هخامنشی و یکی از بزرگ‌ترین فرمانروایان تاریخ ایران بود. او با اصلاحات اداری، اقتصادی و عمرانی، شاهنشاهی را به اوج سازمان‌یافتگی رساند.
                 </div>
                 
                 <div class="sections">
-                    <!-- اطلاعات کلی -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-address-card"></i></div>
@@ -1023,43 +1200,18 @@
                         </div>
                         <div class="sec-body">
                             <div class="info-grid">
-                                <div class="info-item">
-                                    <i class="fas fa-user-tag"></i>
-                                    <div><div class="label">نام</div><div class="value">داریوش یکم (داریوش بزرگ)</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-tree"></i>
-                                    <div><div class="label">دودمان</div><div class="value">هخامنشی</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user-father"></i>
-                                    <div><div class="label">پدر</div><div class="value">ویشتاسپ (هیشتاسپ)</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    <div><div class="label">سال تولد</div><div class="value">حدود ۵۵۰ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-flag-checkered"></i>
-                                    <div><div class="label">آغاز پادشاهی</div><div class="value">۵۲۲ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-skull"></i>
-                                    <div><div class="label">سال درگذشت</div><div class="value">۴۸۶ پ.م</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user-tie"></i>
-                                    <div><div class="label">جانشین</div><div class="value">خشایارشا یکم</div></div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-monument"></i>
-                                    <div><div class="label">محل آرامگاه</div><div class="value">نقش رستم، فارس</div></div>
-                                </div>
+                                <div class="info-item"><i class="fas fa-user-tag"></i><div><div class="label">نام</div><div class="value">داریوش یکم (داریوش بزرگ)</div></div></div>
+                                <div class="info-item"><i class="fas fa-tree"></i><div><div class="label">دودمان</div><div class="value">هخامنشی</div></div></div>
+                                <div class="info-item"><i class="fas fa-user-father"></i><div><div class="label">پدر</div><div class="value">ویشتاسپ (هیشتاسپ)</div></div></div>
+                                <div class="info-item"><i class="fas fa-birthday-cake"></i><div><div class="label">سال تولد</div><div class="value">حدود ۵۵۰ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-flag-checkered"></i><div><div class="label">آغاز پادشاهی</div><div class="value">۵۲۲ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-skull"></i><div><div class="label">سال درگذشت</div><div class="value">۴۸۶ پ.م</div></div></div>
+                                <div class="info-item"><i class="fas fa-user-tie"></i><div><div class="label">جانشین</div><div class="value">خشایارشا یکم</div></div></div>
+                                <div class="info-item"><i class="fas fa-monument"></i><div><div class="label">محل آرامگاه</div><div class="value">نقش رستم، فارس</div></div></div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- رسیدن به قدرت -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-arrow-trend-up"></i></div>
@@ -1067,13 +1219,10 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <p>
-                                پس از مرگ کمبوجیه دوم، فردی به نام گئومات خود را بردیا معرفی کرد و به قدرت رسید. داریوش با همراهی شش تن از بزرگان پارسی او را برکنار کرد و در سال ۵۲۲ پیش از میلاد به پادشاهی رسید. این رویداد در کتیبه بیستون شرح داده شده است.
-                            </p>
+                            <p>پس از مرگ کمبوجیه، داریوش با همراهی شش تن از بزرگان پارسی، گئومات را برکنار کرد و در سال ۵۲۲ پ.م به پادشاهی رسید.</p>
                         </div>
                     </div>
                     
-                    <!-- اقدامات -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-hammer"></i></div>
@@ -1081,26 +1230,13 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <div class="highlight-box">
-                                <i class="fas fa-mountain"></i>
-                                <strong>کتیبه بیستون:</strong> شرح به قدرت رسیدن و سرکوب شورش‌ها به سه زبان فارسی باستان، ایلامی و اکدی.
-                            </div>
-                            <div class="highlight-box">
-                                <i class="fas fa-landmark"></i>
-                                <strong>ساخت تخت جمشید:</strong> آغاز ساخت مجموعه باشکوه تخت جمشید در دوران او.
-                            </div>
-                            <div class="highlight-box">
-                                <i class="fas fa-road"></i>
-                                <strong>راه شاهی:</strong> توسعه جاده‌ای که شوش را به سارد متصل می‌کرد.
-                            </div>
-                            <div class="highlight-box">
-                                <i class="fas fa-coins"></i>
-                                <strong>سکه داریوش:</strong> ضرب سکه‌های طلای «دریک» و سکه‌های نقره «شِکِل».
-                            </div>
+                            <div class="highlight-box"><i class="fas fa-mountain"></i> <strong>کتیبه بیستون:</strong> شرح به قدرت رسیدن به سه زبان</div>
+                            <div class="highlight-box"><i class="fas fa-landmark"></i> <strong>ساخت تخت جمشید:</strong> آغاز ساخت مجموعه باشکوه</div>
+                            <div class="highlight-box"><i class="fas fa-road"></i> <strong>راه شاهی:</strong> توسعه جاده شوش به سارد</div>
+                            <div class="highlight-box"><i class="fas fa-coins"></i> <strong>سکه داریوش:</strong> ضرب سکه‌های طلا و نقره</div>
                         </div>
                     </div>
                     
-                    <!-- اصلاحات اداری -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-building-columns"></i></div>
@@ -1109,15 +1245,13 @@
                         </div>
                         <div class="sec-body">
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> تقسیم امپراتوری به استان‌هایی به نام «ساتراپی»</li>
-                                <li><i class="fas fa-check-circle"></i> تعیین ساتراپ (استاندار) برای هر استان</li>
+                                <li><i class="fas fa-check-circle"></i> تقسیم به استان‌های «ساتراپی»</li>
+                                <li><i class="fas fa-check-circle"></i> تعیین ساتراپ برای هر استان</li>
                                 <li><i class="fas fa-check-circle"></i> ایجاد نظام منظم مالیاتی</li>
-                                <li><i class="fas fa-check-circle"></i> تقویت دستگاه اداری و نظارت بر عملکرد مسئولان</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <!-- جنگ‌ها -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-helmet-battle"></i></div>
@@ -1126,16 +1260,14 @@
                         </div>
                         <div class="sec-body">
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> سرکوب شورش‌های داخلی در آغاز حکومت</li>
-                                <li><i class="fas fa-check-circle"></i> گسترش قلمرو به بخش‌هایی از دره سند</li>
-                                <li><i class="fas fa-check-circle"></i> لشکرکشی به سرزمین سکاها</li>
-                                <li><i class="fas fa-check-circle"></i> آغاز جنگ‌های ایران و یونان</li>
-                                <li><i class="fas fa-check-circle"></i> شکست سپاه ایران در نبرد ماراتن (۴۹۰ پ.م)</li>
+                                <li><i class="fas fa-check-circle"></i> سرکوب شورش‌های داخلی</li>
+                                <li><i class="fas fa-check-circle"></i> گسترش به دره سند</li>
+                                <li><i class="fas fa-check-circle"></i> لشکرکشی به سکاها</li>
+                                <li><i class="fas fa-check-circle"></i> نبرد ماراتن (۴۹۰ پ.م)</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <!-- وسعت امپراتوری -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-globe-asia"></i></div>
@@ -1143,27 +1275,10 @@
                             <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="sec-body">
-                            <p>
-                                در زمان داریوش، شاهنشاهی هخامنشی به بزرگ‌ترین وسعت خود رسید و از دره سند در شرق تا مصر، آسیای صغیر و بخش‌هایی از اروپا در غرب گسترده بود.
-                            </p>
+                            <p>از دره سند در شرق تا مصر، آسیای صغیر و بخش‌هایی از اروپا در غرب.</p>
                         </div>
                     </div>
                     
-                    <!-- مرگ -->
-                    <div class="section-item">
-                        <div class="sec-header" onclick="toggleSec(this)">
-                            <div class="sec-icon"><i class="fas fa-monument"></i></div>
-                            <h4>مرگ</h4>
-                            <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="sec-body">
-                            <p>
-                                داریوش یکم در سال ۴۸۶ پیش از میلاد درگذشت و در آرامگاه سنگی خود در نقش رستم به خاک سپرده شد. پس از او، پسرش خشایارشا یکم به سلطنت رسید.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- اهمیت تاریخی -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-star"></i></div>
@@ -1172,17 +1287,14 @@
                         </div>
                         <div class="sec-body">
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> سازمان‌دهنده بزرگ شاهنشاهی هخامنشی</li>
-                                <li><i class="fas fa-check-circle"></i> بنیان‌گذار نظام اداری منظم ایران باستان</li>
+                                <li><i class="fas fa-check-circle"></i> سازمان‌دهنده بزرگ هخامنشی</li>
+                                <li><i class="fas fa-check-circle"></i> بنیان‌گذار نظام اداری ایران باستان</li>
                                 <li><i class="fas fa-check-circle"></i> آغازکننده ساخت تخت جمشید</li>
                                 <li><i class="fas fa-check-circle"></i> سازنده کتیبه بیستون</li>
-                                <li><i class="fas fa-check-circle"></i> توسعه‌دهنده راه شاهی و نظام پستی</li>
-                                <li><i class="fas fa-check-circle"></i> گسترش تجارت و اقتصاد با ضرب سکه‌های استاندارد</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <!-- منابع -->
                     <div class="section-item">
                         <div class="sec-header" onclick="toggleSec(this)">
                             <div class="sec-icon"><i class="fas fa-book"></i></div>
@@ -1191,11 +1303,10 @@
                         </div>
                         <div class="sec-body">
                             <div class="source-list">
-                                <span><i class="fas fa-book-open"></i> دانشنامه ایرانیکا، «Darius I»</span>
-                                <span><i class="fas fa-book-open"></i> دائرةالمعارف بریتانیکا، «Darius I»</span>
+                                <span><i class="fas fa-book-open"></i> دانشنامه ایرانیکا</span>
+                                <span><i class="fas fa-book-open"></i> دائرةالمعارف بریتانیکا</span>
                                 <span><i class="fas fa-mountain"></i> کتیبه بیستون</span>
                                 <span><i class="fas fa-scroll"></i> هرودوت، تاریخ</span>
-                                <span><i class="fas fa-book"></i> From Cyrus to Alexander</span>
                             </div>
                         </div>
                     </div>
@@ -1215,9 +1326,9 @@
         </div>
         <div>
             <h4><i class="fas fa-link"></i> پیوندها</h4>
-            <a href="#"><i class="fas fa-chevron-left"></i> مقالات</a>
-            <a href="#"><i class="fas fa-chevron-left"></i> پادکست‌ها</a>
-            <a href="#"><i class="fas fa-chevron-left"></i> گالری تصاویر</a>
+            <a onclick="showHome()"><i class="fas fa-chevron-left"></i> خانه</a>
+            <a onclick="document.getElementById('homeSection').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chevron-left"></i> نامه‌نگار</a>
+            <a onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chevron-left"></i> تماس</a>
         </div>
         <div>
             <h4><i class="fas fa-share-alt"></i> شبکه‌های اجتماعی</h4>
@@ -1290,4 +1401,4 @@
 </script>
 
 </body>
-                </html>
+                            </html>
