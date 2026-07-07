@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پاسارگاد - گهواره تمدن هخامنشی</title>
+    
+    <!-- فونت وزیر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Font Awesome 6 (رایگان) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #F4ECD8;
+            color: #3E2723;
+            line-height: 1.8;
+        }
+        
+        /* هدر با تصویر شاخص و افکت محو */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pasargad_World_Heritage_Site_%28cropped%29.jpg/1280px-Pasargad_World_Heritage_Site_%28cropped%29.jpg') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #F4ECD8;
+            border-bottom: 6px solid #B85A2C;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(0,0,0,0.7);
+            color: #F4ECD8;
+        }
+        
+        .hero-content h1 i {
+            color: #C69C4C;
+            margin: 0 10px;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            background: rgba(184, 90, 44, 0.7);
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            border: 1px solid #C69C4C;
+        }
+        
+        /* نوار ناوبری شیشه‌ای */
+        .navbar {
+            background: rgba(42, 125, 123, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #C69C4C;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #F4ECD8;
+        }
+        
+        .navbar .logo i {
+            color: #C69C4C;
+            margin-left: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #F4ECD8;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: #C69C4C;
+            color: #3E2723;
+            transform: scale(1.05);
+        }
+        
+        .nav-links a i {
+            margin-left: 8px;
+        }
+        
+        /* بخش اصلی محتوا (سبک ویکی‌پدیا) */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+        
+        .wiki-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-right: 8px solid #B85A2C;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        
+        .wiki-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184, 90, 44, 0.2);
+        }
+        
+        .wiki-card h2 {
+            color: #B85A2C;
+            font-size: 2.2rem;
+            border-bottom: 3px dashed #C69C4C;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .wiki-card h2 i {
+            color: #C69C4C;
+            margin-left: 12px;
+        }
+        
+        .wiki-card h3 {
+            color: #2A7D7B;
+            font-size: 1.5rem;
+            margin-top: 25px;
+        }
+        
+        .wiki-card h3 i {
+            margin-left: 10px;
+            color: #C69C4C;
+        }
+        
+        .wiki-card p {
+            text-align: justify;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+        
+        .wiki-card ul {
+            list-style: none;
+            padding-right: 20px;
+        }
+        
+        .wiki-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .wiki-card ul li i {
+            color: #2A7D7B;
+            margin-left: 12px;
+            width: 20px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #2A7D7B;
+            color: #F4ECD8;
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+        
+        .badge i {
+            margin-left: 6px;
+        }
+        
+        /* گرید برای تصاویر و جعبه‌های جانبی */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .info-box {
+            background: #2A7D7B;
+            color: #F4ECD8;
+            padding: 25px;
+            border-radius: 20px;
+            border: 3px solid #C69C4C;
+        }
+        
+        .info-box h3 {
+            color: #C69C4C;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #C69C4C;
+            padding-bottom: 10px;
+        }
+        
+        .info-box i {
+            color: #C69C4C;
+            margin-left: 10px;
+        }
+        
+        .info-box ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* فوتر */
+        .footer {
+            background: #3E2723;
+            color: #F4ECD8;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 6px solid #C69C4C;
+        }
+        
+        .footer i {
+            color: #C69C4C;
+            margin: 0 8px;
+        }
+        
+        .footer a {
+            color: #C69C4C;
+            text-decoration: none;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .wiki-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- هدر شاخص -->
+<section class="hero">
+    <div class="hero-content">
+        <h1><i class="fas fa-landmark"></i> پاسارگاد <i class="fas fa-landmark"></i></h1>
+        <p><i class="fas fa-crown"></i> نخستین پایتخت هخامنشیان <i class="fas fa-crown"></i></p>
+    </div>
+</section>
+
+<!-- نوار منو -->
+<nav class="navbar">
+    <div class="logo">
+        <i class="fas fa-gem"></i> پاسارگاد
+    </div>
+    <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a href="#history"><i class="fas fa-scroll"></i> تاریخچه</a></li>
+        <li><a href="#architecture"><i class="fas fa-archway"></i> معماری</a></li>
+        <li><a href="#gallery"><i class="fas fa-images"></i> نگارخانه</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> تماس</a></li>
+    </ul>
+</nav>
+
+<!-- محتوای اصلی -->
+<div class="container" id="home">
+
+    <!-- مقاله اول: معرفی -->
+    <div class="wiki-card">
+        <h2><i class="fas fa-info-circle"></i> درباره پاسارگاد</h2>
+        <p>
+            <i class="fas fa-quote-right" style="color: #C69C4C; font-size: 1.8rem; float: right; margin-left: 10px;"></i>
+            <strong>پاسارگاد</strong> نخستین پایتخت امپراتوری هخامنشی و آرامگاه کوروش بزرگ است. 
+            این مجموعه تاریخی در دشت مرغاب، استان فارس و نزدیک شهر شیراز واقع شده و یکی از مهم‌ترین 
+            میراث‌های جهانی یونسکو به شمار می‌رود. 
+        </p>
+        <p>
+            بنای پاسارگاد نشان‌دهنده اوج هنر و معماری ایرانی در سدهٔ ششم پیش از میلاد است. 
+            طراحی آن تلفیقی از فرهنگ‌های مختلف امپراتوری هخامنشی را به نمایش می‌گذارد.
+        </p>
+        <span class="badge"><i class="fas fa-globe-asia"></i> میراث جهانی یونسکو</span>
+        <span class="badge"><i class="fas fa-calendar-alt"></i> ۵۵۰ پیش از میلاد</span>
+    </div>
+
+    <!-- گرید دو ستونه -->
+    <div class="grid-2">
+        <!-- ستون راست: تاریخچه -->
+        <div class="wiki-card" id="history">
+            <h2><i class="fas fa-clock"></i> تاریخچه</h2>
+            <p>
+                پاسارگاد به دستور <strong>کوروش بزرگ</strong> بنیان‌گذار شاهنشاهی هخامنشی ساخته شد. 
+                این شهر پس از پیروزی کوروش بر مادها، به عنوان پایتخت جدید انتخاب گردید.
+            </p>
+            <h3><i class="fas fa-user-king"></i> کوروش بزرگ</h3>
+            <p>
+                کوروش بزرگ نه تنها یک فاتح، بلکه یک مدیر و قانون‌گذار بزرگ بود. 
+                منشور حقوق بشر او (استوانه کوروش) در پاسارگاد نگهداری می‌شود.
+            </p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> ساخت پارک‌ها و باغ‌های سلطنتی</li>
+                <li><i class="fas fa-check-circle"></i> احداث کاخ‌های ستون‌دار</li>
+                <li><i class="fas fa-check-circle"></i> آرامگاه کوروش (ساده اما شکوهمند)</li>
+            </ul>
+        </div>
+
+        <!-- ستون چپ: اطلاعات جانبی -->
+        <div class="info-box" id="architecture">
+            <h3><i class="fas fa-cube"></i> اطلاعات سریع</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> استان فارس، دشت مرغاب</li>
+                <li><i class="fas fa-ruler-combined"></i> مساحت: ۱۵۰ هکتار</li>
+                <li><i class="fas fa-building"></i> سبک معماری: هخامنشی</li>
+                <li><i class="fas fa-users"></i> بازدید سالانه: ~۲۰۰,۰۰۰ نفر</li>
+                <li><i class="fas fa-university"></i> ثبت یونسکو: ۲۰۰۴</li>
+            </ul>
+            <br>
+            <h3><i class="fas fa-camera-retro"></i> مشاهیر مدفون</h3>
+            <ul>
+                <li><i class="fas fa-crown"></i> کوروش بزرگ</li>
+                <li><i class="fas fa-crown" style="opacity:0.5;"></i> کمبوجیه (احتمالی)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- مقاله دوم: معماری -->
+    <div class="wiki-card" id="gallery">
+        <h2><i class="fas fa-vector-square"></i> معماری بی‌نظیر</h2>
+        <p>
+            <i class="fas fa-columns" style="color: #B85A2C; font-size: 2rem; float: left; margin-right: 15px;"></i>
+            ستون‌های بلند پاسارگاد با سرستون‌های حیوانی (شیر، گاو و پرنده) تزئین شده‌اند. 
+            مصالح اصلی سنگ آهک و ماسه‌سنگ است که با دقت فوق‌العاده‌ای تراش خورده‌اند.
+        </p>
+        <p>
+            <strong>کاخ دروازه:</strong> ورودی اصلی با نقش برجسته انسان بالدار (نماد فروهر) که 
+            نمایانگر پیوند آیین زرتشت با هنر هخامنشی است.
+        </p>
+        <p>
+            <i class="fas fa-leaf" style="color: #2A7D7B;"></i> باغ‌های سلطنتی پاسارگاد، الهام‌بخش 
+            <strong>باغ‌های ایرانی</strong> (چهارباغ) در سراسر جهان اسلام شد.
+        </p>
+    </div>
+
+    <!-- بخش نقل قول -->
+    <div style="background: #C69C4C; color: #3E2723; padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; box-shadow: 0 8px 25px rgba(198, 156, 76, 0.4);">
+        <i class="fas fa-quote-left" style="font-size: 3rem; opacity: 0.5;"></i>
+        <p style="font-size: 1.4rem; font-weight: 300; max-width: 700px; margin: 0 auto;">
+            "اگر روزی بدانند که در پاسارگاد چه گذشته، زانوی شوق به خاک خواهند سایید."
+        </p>
+        <span style="display: block; margin-top: 10px;">— سفرنامه‌نویسی کهن</span>
+    </div>
+
+</div>
+
+<!-- فوتر -->
+<footer class="footer">
+    <p>
+        <i class="fas fa-crown"></i> پاسارگاد؛ میراث جاودان ایران زمین <i class="fas fa-crown"></i>
+    </p>
+    <p style="margin-top: 15px; font-size: 0.9rem;">
+        <i class="fas fa-code"></i> طراحی شده با <i class="fas fa-heart" style="color: #B85A2C;"></i> برای عاشقان تاریخ
+    </p>
+    <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+        <i class="fab fa-github"></i> <a href="#">مخزن پروژه</a> | 
+        <i class="fab fa-telegram"></i> <a href="#">کانال تلگرام</a> |
+        <i class="fas fa-envelope"></i> info@pasargad.ir
+    </p>
+</footer>
+
+<!-- دکمه بازگشت به بالا (با آیکون) -->
+<a href="#" style="position: fixed; bottom: 30px; left: 30px; background: #B85A2C; color: #F4ECD8; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 5px 20px rgba(184, 90, 44, 0.5); transition: 0.3s; text-decoration: none; z-index: 999;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+</body>
+</html>
